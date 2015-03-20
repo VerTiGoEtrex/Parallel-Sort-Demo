@@ -242,7 +242,7 @@ double runTest(SortFunc &sortFunc, long i){
 }
 
 int main(int argc, char *argv[]) {
-  std::array<SortFunc, 7> sortFunctions = {
+  std::array<SortFunc, 7> sortFunctions = { {
     SortFunc{::serialGnuSort, "Serial GNU Introsort"},
     SortFunc{::serialQuickSort, "Serial Quicksort"},
     SortFunc{::serialMergeSort, "Serial Mergesort"},
@@ -250,7 +250,7 @@ int main(int argc, char *argv[]) {
     SortFunc{::parallelIntelSort, "Parallel Intel Sort"},
     SortFunc{::parallelQuickSort, "Parallel Quicksort"},
     SortFunc{::parallelMergeSort, "Parallel Mergesort"}
-  };
+  } };
 
   for (long i = STARTSIZE; i < MAXSIZE; i*=2){
     cout << "Running tests on size " << readableSize(i*sizeof(int)) << endl;
